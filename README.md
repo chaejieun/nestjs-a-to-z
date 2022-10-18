@@ -22,10 +22,10 @@ $ nodemon main.js 명령어로 실시간으로 스크립트 파일을 디버깅�
 
 
 ### 공식 문서 정리
-http 프로토콜 자료 1 :https://developer.mozilla.org/ko/docs/Web/HTTP
-http 프로토콜 자료 2 :https://developers.google.com/web/fundamentals/performance/http2
-Rest API 공식 문서 : https://docs.microsoft.com/ko-kr/azure/architecture/best-practices/api-design
-JSON과 Javascript의 차이 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON
-express 공식 문서 : https://expressjs.com/
+- http 프로토콜 자료 1 :https://developer.mozilla.org/ko/docs/Web/HTTP
+- http 프로토콜 자료 2 :https://developers.google.com/web/fundamentals/performance/http2
+- Rest API 공식 문서 : https://docs.microsoft.com/ko-kr/azure/architecture/best-practices/api-design
+- JSON과 Javascript의 차이 : https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/JSON
+- express 공식 문서 : https://expressjs.com/
 
 
