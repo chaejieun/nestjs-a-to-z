@@ -16,7 +16,7 @@
   `$ yarn global add prettier`
   
   
-  #### nodemon
+  ### nodemon
 $ nodemon main.js 명령어로 실시간으로 스크립트 파일을 디버깅할 수 있다.
 
 
