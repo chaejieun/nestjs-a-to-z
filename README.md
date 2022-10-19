@@ -111,6 +111,8 @@ main.ts	핵심 기능 NestFactory을 사용하여 Nest 애플리케이션 인스
 
 ### Middleware
 ![image](https://user-images.githubusercontent.com/48235442/196603387-87b059c5-adb3-459c-b283-73829ec48e51.png)
+
+
 미들웨어는 라우트 핸들러 전에 호출되는 함수
 미들웨어 기능은 요청 및 응답 객체에 대한 액세스 권한이 next()있으며 애플리케이션의 요청-응답 주기에 있는 미들웨어 기능이다. 
 다음 미들웨어 기능은 일반적으로 라는 변수로 표시 next().
