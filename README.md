@@ -84,4 +84,18 @@ main.ts	핵심 기능 NestFactory을 사용하여 Nest 애플리케이션 인스
 
 
 
+### Module
+@Module()모듈은 데코레이터 로 주석이 달린 클래스 
+데코레이터는 Nest 가 애플리케이션 구조를 구성하는 데 사용하는 메타 @Module()데이터를 제공한다
+![image](https://user-images.githubusercontent.com/48235442/196602083-aeebe1dc-0923-4cbf-a006-55f83f4312fe.png)
+
+
+`$ nest g module cats`
+`$ nest g co cats`
+`$ nest g service cats`
+
+모듈 은 기본적으로 공급자를 캡슐화 한다. 
+즉, 현재 모듈의 일부도 아니고 가져온 모듈에서 내보낸 것도 아닌 공급자를 주입할 수 없다. 
+따라서 모듈에서 내보낸 공급자를 모듈의 공용 인터페이스 또는 API로 간주할 수 있다.
+
 
