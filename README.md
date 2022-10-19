@@ -120,3 +120,21 @@ main.ts	핵심 기능 NestFactory을 사용하여 Nest 애플리케이션 인스
 `$ nest g middleware logger`
 
 
+### 미들웨어 적용 #
+@Module()데코레이터 에는 미들웨어가 들어갈 자리가 없습니다 . 
+configure()대신 모듈 클래스의 메서드를 사용하여 설정합니다 . 
+미들웨어를 포함하는 모듈은 NestModule인터페이스를 구현해야 합니다. 
+LoggerMiddleware수준 에서 설정합시다 AppModule.
+
+` 
+@Module({
+  imports: [CatsModule],
+})
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(LoggerMiddleware)
+      .forRoutes('cats');
+  }
+}
+`
