@@ -42,14 +42,15 @@ Node (또는 더 공식적으로는 Node.js) 는 오픈소스, 크로스 플랫�
 
 ### Express Route
 라우팅은 애플리케이션 엔드 포인트(URI)의 정의, 그리고 URI가 클라이언트 요청에 응답하는 방식을 말합니다. 
-`
+```
 var express = require('express');
 var app = express();
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res) {
   res.send('hello world');
-});`
+});
+```
 
 
 ### Express middleware
@@ -126,7 +127,7 @@ configure()대신 모듈 클래스의 메서드를 사용하여 설정합니다 
 미들웨어를 포함하는 모듈은 NestModule인터페이스를 구현해야 합니다. 
 LoggerMiddleware수준 에서 설정합시다 AppModule.
 
-` 
+```
 @Module({
   imports: [CatsModule],
 })
@@ -137,4 +138,4 @@ export class AppModule implements NestModule {
       .forRoutes('cats');
   }
 }
-`
+```
