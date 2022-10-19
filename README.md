@@ -53,3 +53,35 @@ app.get('/', function(req, res) {
 
 ![image](https://user-images.githubusercontent.com/48235442/196363302-a93306b1-18f5-41e0-8ab3-6eedab780b78.png)
 
+
+## NestJS
+- 공식 문서 : https://docs.nestjs.com/
+- 공식 문서 한국어 번역 : https://docs.nestjs.kr/
+
+`$ npm i -g @nestjs/cli`
+`$ nest new project-name`
+
+app.controller.ts	단일 경로가 있는 기본 컨트롤러입니다.
+app.controller.spec.ts	컨트롤러에 대한 단위 테스트입니다.
+app.module.ts	애플리케이션의 루트 모듈입니다.
+app.service.ts	하나의 방법으로 기본 서비스를 제공합니다.
+main.ts	핵심 기능 NestFactory을 사용하여 Nest 애플리케이션 인스턴스를 생성하는 애플리케이션의 항목 파일입니다.
+
+
+### VScode
+- ESLint : 자바스크립트나 타입스크립트의 코드를 검사해주는 역할 (.eslintrc.js 규칙 명시 파일)
+- https://eslint.org/docs/rules/ 
+- .prettierrc : 코드를 예쁘게 졍렬해주는 역할
+- 확장 프로그램 : auto import
+
+
+### Controller
+컨트롤러는 들어오는 요청 을 처리 하고 클라이언트에 응답 을 반환 하는 역할
+컨트롤러의 목적은 애플리케이션에 대한 특정 요청을 수신하는 것이다.
+라우팅 메커니즘 은 어떤 컨트롤러가 어떤 요청을 수신하는지 제어한다. 
+종종 각 컨트롤러에는 둘 이상의 경로가 있으며 다른 경로는 다른 작업을 수행할 수 있다.
+![image](https://user-images.githubusercontent.com/48235442/196597471-476cd283-fc93-454c-a7f9-dd87f64d3d9f.png)
+
+
+
+
