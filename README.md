@@ -42,14 +42,15 @@ Node (또는 더 공식적으로는 Node.js) 는 오픈소스, 크로스 플랫�
 
 ### Express Route
 라우팅은 애플리케이션 엔드 포인트(URI)의 정의, 그리고 URI가 클라이언트 요청에 응답하는 방식을 말합니다. 
-`
+```
 var express = require('express');
 var app = express();
 
 // respond with "hello world" when a GET request is made to the homepage
 app.get('/', function(req, res) {
   res.send('hello world');
-});`
+});
+```
 
 
 ### Express middleware
@@ -109,3 +110,32 @@ main.ts	핵심 기능 NestFactory을 사용하여 Nest 애플리케이션 인스
 따라서 모듈에서 내보낸 공급자를 모듈의 공용 인터페이스 또는 API로 간주할 수 있다.
 
 
+### Middleware
+![image](https://user-images.githubusercontent.com/48235442/196603387-87b059c5-adb3-459c-b283-73829ec48e51.png)
+
+
+미들웨어는 라우트 핸들러 전에 호출되는 함수
+미들웨어 기능은 요청 및 응답 객체에 대한 액세스 권한이 next()있으며 애플리케이션의 요청-응답 주기에 있는 미들웨어 기능이다. 
+다음 미들웨어 기능은 일반적으로 라는 변수로 표시 next().
+
+`$ nest g middleware logger`
+
+
+### 미들웨어 적용 #
+@Module()데코레이터 에는 미들웨어가 들어갈 자리가 없습니다 . 
+configure()대신 모듈 클래스의 메서드를 사용하여 설정합니다 . 
+미들웨어를 포함하는 모듈은 NestModule인터페이스를 구현해야 합니다. 
+LoggerMiddleware수준 에서 설정합시다 AppModule.
+
+```
+@Module({
+  imports: [CatsModule],
+})
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(LoggerMiddleware)
+      .forRoutes('cats');
+  }
+}
+```
