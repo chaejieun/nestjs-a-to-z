@@ -91,7 +91,9 @@ main.ts	핵심 기능 NestFactory을 사용하여 Nest 애플리케이션 인스
 
 
 `$ nest g module cats`
+
 `$ nest g co cats`
+
 `$ nest g service cats`
 
 모듈 은 기본적으로 공급자를 캡슐화 한다. 
