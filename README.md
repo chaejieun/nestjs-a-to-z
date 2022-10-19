@@ -8,11 +8,17 @@
 ### 환경 설정
 1. node 설치
   `$ npm -v`
+
    `$ npm i -g npm`
+
 2. yarn 설치
+
   `$ npm install --global yarn`
+
 3. nodemon, prettier 설치
+
   `$ yarn global add nodemon`
+
   `$ yarn global add prettier`
   
   
@@ -59,7 +65,9 @@ app.get('/', function(req, res) {
 - 공식 문서 한국어 번역 : https://docs.nestjs.kr/
 
 `$ npm i -g @nestjs/cli`
+
 `$ nest new project-name`
+
 
 app.controller.ts	단일 경로가 있는 기본 컨트롤러입니다.
 app.controller.spec.ts	컨트롤러에 대한 단위 테스트입니다.
