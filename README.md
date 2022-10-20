@@ -240,9 +240,9 @@ Q. 요청 -> 필터 -> 파이프 -> 라우트 핸들러 이런 식으로 흐름�
 - 기본 기능 동작 확장
 - 특정 조건에 따라 함수를 완전히 재정의합니다(예: 캐싱 목적).
 
+## 프로젝트1. 고양이 정보 커뮤니티
 
-
-## 프로젝트1. 고양이 정보 커뮤니티 
-
-- mongoDB ` $ npm i @nestjs/mongoose mongoose ` 
+- mongoDB `$ npm i @nestjs/mongoose mongoose`
 - 환경 변수 설정 `$ npm i --save @nestjs/config`
+- 클래서 유효성검사기 `$ npm i --save class-validator class-transformer`
+- bcrypt 라이브러리 설치 ` $ npm i bcrypt` `$ npm i -D @types/bcrypt`
