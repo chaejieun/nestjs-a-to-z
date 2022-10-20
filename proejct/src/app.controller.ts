@@ -9,9 +9,4 @@ export class AppController {
     private readonly appService: AppService,
     private readonly catsService: CatsService,
   ) {}
-
-  @Get()
-  getHello() {
-    return this.catsService.hiCatServiceProduct();
-  }
 }
