@@ -246,3 +246,12 @@ Q. 요청 -> 필터 -> 파이프 -> 라우트 핸들러 이런 식으로 흐름�
 - 환경 변수 설정 `$ npm i --save @nestjs/config`
 - 클래서 유효성검사기 `$ npm i --save class-validator class-transformer`
 - bcrypt 라이브러리 설치 ` $ npm i bcrypt` `$ npm i -D @types/bcrypt`
+- express 위에서의 swagger 설치 `$ npm install --save @nestjs/swagger swagger-ui-express`
+
+- 인증(Authentication)
+  `$ npm install --save @nestjs/passport passport passport-local`
+  `$ npm install --save-dev @types/passport-local`
+
+- JWT 기능
+  `$ npm install --save @nestjs/jwt passport-jwt`
+  `$ npm install --save-dev @types/passport-jwt`

@@ -11,7 +11,7 @@ const options: SchemaOptions = {
 @Schema()
 export class Cat extends Document {
   @ApiProperty({
-    example: 'example@kakao.com',
+    example: 'amamov@kakao.com',
     description: 'email',
     required: true,
   })
@@ -23,6 +23,11 @@ export class Cat extends Document {
   @IsNotEmpty()
   email: string;
 
+  @ApiProperty({
+    example: 'amamov',
+    description: 'name',
+    required: true,
+  })
   @Prop({
     required: true,
   })
@@ -30,15 +35,20 @@ export class Cat extends Document {
   @IsNotEmpty()
   name: string;
 
+  @ApiProperty({
+    example: '23810',
+    description: 'password',
+    required: true,
+  })
   @Prop({
     required: true,
   })
-  @IsEmail()
+  @IsString()
   @IsNotEmpty()
   password: string;
 
   @Prop()
-  @IsEmail()
+  @IsString()
   imgUrl: string;
 
   // 가상 필드를 만들어서
