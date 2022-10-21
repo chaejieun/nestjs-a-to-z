@@ -47,13 +47,21 @@ export class Cat extends Document {
   @IsNotEmpty()
   password: string;
 
-  @Prop()
+  @Prop({
+    default:
+      'https://github.com/amamov/NestJS-solid-restapi-boilerplate/raw/main/docs/images/1.jpeg',
+  })
   @IsString()
   imgUrl: string;
 
   // 가상 필드를 만들어서
   // 필요한 데이터만 넘겨줄 수 있도록 해주는 역할
-  readonly readOnlyData: { id: string; email: string; name: string };
+  readonly readOnlyData: {
+    id: string;
+    email: string;
+    name: string;
+    imgUrl: string;
+  };
 }
 
 export const CatSchema = SchemaFactory.createForClass(Cat);
@@ -64,5 +72,6 @@ CatSchema.virtual('readOnlyData').get(function (this: Cat) {
     id: this.id,
     email: this.email,
     name: this.name,
+    imgUrl: this.imgUrl,
   };
 });
