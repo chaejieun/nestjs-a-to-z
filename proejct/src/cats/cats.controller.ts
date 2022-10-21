@@ -37,7 +37,7 @@ export class CatsController {
   @Get()
   //getCurrentCat(@Req() req: Request) {
   getCurrentCat(@CurrentUser() cat) {
-    return cat.readOnlyData;
+    return cat;
   }
 
   @ApiResponse({
