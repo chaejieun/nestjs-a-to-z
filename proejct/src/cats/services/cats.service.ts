@@ -29,7 +29,7 @@ export class CatsService {
     //const isCatExist = await this.catModel.exists({ email });
     const isCatExist = await this.catsRepository.existByEmail(email);
 
-    // 해당 고양이가 존재한다면
+    // 해당 고양이가 존재한다면63562ef3d415f0a7087e3f31
     if (isCatExist) {
       //throw new HttpException('해당하는 고양이는 이미 존재합니다.', 403);
       throw new UnauthorizedException('해당하는 고양이는 이미 존재합니다.');

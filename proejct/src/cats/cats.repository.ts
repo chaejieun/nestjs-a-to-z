@@ -1,15 +1,24 @@
+import { CommentsSchema } from './../comments/comments.schema';
 import { Injectable, Inject, HttpException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { Cat } from './cats.schema';
 import { CatRequestDto } from './dto/cats.request.dto';
+import * as mongoose from 'mongoose';
 
 @Injectable()
 export class CatsRepository {
   constructor(@InjectModel(Cat.name) private readonly catModel: Model<Cat>) {}
 
   async findAll() {
-    return await this.catModel.find();
+    const CommentsModel = mongoose.model('comments', CommentsSchema);
+    const result = await this.catModel
+      .find()
+      .populate('comments', CommentsModel);
+
+    // populate : virtual field로 만들어놓은 comments를 연결 시켜주는 역할
+
+    return result;
   }
 
   async findByIdAndUpdateImg(id: string, fileName: string) {
@@ -23,7 +32,9 @@ export class CatsRepository {
     return newCat.readOnlyData;
   }
 
-  async findCatByIdWithoutPassword(catId: string): Promise<Cat | null> {
+  async findCatByIdWithoutPassword(
+    catId: string | Types.ObjectId,
+  ): Promise<Cat | null> {
     const cat = await this.catModel.findById(catId).select('-password'); // - 해당하는 필드를 제외하고 가져오는 의미
     return cat;
   }

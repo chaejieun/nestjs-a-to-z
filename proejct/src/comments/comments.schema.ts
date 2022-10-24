@@ -13,7 +13,7 @@ const options: SchemaOptions = {
   timestamps: true,
 };
 
-@Schema()
+@Schema(options)
 export class Comments extends Document {
   @ApiProperty({
     description: '작성한 고양이 id',
@@ -34,8 +34,8 @@ export class Comments extends Document {
   @Prop({
     required: true,
   })
-  @IsString()
   @IsNotEmpty()
+  @IsString()
   contents: string;
 
   @ApiProperty({
@@ -45,11 +45,10 @@ export class Comments extends Document {
     default: 0,
   })
   @IsPositive()
-  @IsNotEmpty()
   likeCount: number;
 
   @ApiProperty({
-    description: '작성 대상(게시물, 정보글)',
+    description: '작성 대상 (게시물, 정보글)',
     required: true,
   })
   @Prop({
@@ -57,7 +56,6 @@ export class Comments extends Document {
     required: true,
     ref: 'cats',
   })
-  @IsEmail()
   @IsNotEmpty()
   info: Types.ObjectId;
 }
