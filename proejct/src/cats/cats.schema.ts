@@ -3,7 +3,6 @@ import { ApiProperty } from '@nestjs/swagger';
 import { IsEmail, IsNotEmpty, IsString } from 'class-validator';
 import { Document, SchemaOptions } from 'mongoose';
 
-export type CatDocument = Cat & Document;
 const options: SchemaOptions = {
   timestamps: true,
 };

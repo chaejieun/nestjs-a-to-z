@@ -1,7 +1,3 @@
-import { multerOptions } from './../common/utils/multer.options';
-import { JwtAuthGuard } from './../auth/jwt/jwt.guard';
-import { LoginRequestDto } from './../auth/dto/login.request.dto';
-import { AuthService } from './../auth/auth.service';
 import {
   Body,
   Delete,
@@ -19,13 +15,17 @@ import { ApiOperation, ApiResponse } from '@nestjs/swagger';
 import { HttpExceptionFilter } from 'src/common/exceptions/http-exception.filter';
 import { SuccessInterceptor } from 'src/common/interceptors/success.interceptor';
 import { PositiveIntPipe } from 'src/common/pipes/positiveInt.pipe';
-import { CatsService } from './cats.service';
-import { ReadOnlyCatDto } from './dto/cat.dto';
-import { CatRequestDto } from './dto/cats.request.dto';
+import { CatsService } from '../services/cats.service';
+import { ReadOnlyCatDto } from '../dto/cat.dto';
+import { CatRequestDto } from '../dto/cats.request.dto';
 import { Request } from 'express';
 import { CurrentUser } from 'src/common/decorators/user.decorator';
 import { FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
-import { Cat } from './cats.schema';
+import { Cat } from '../cats.schema';
+import { LoginRequestDto } from 'src/auth/dto/login.request.dto';
+import { multerOptions } from 'src/common/utils/multer.options';
+import { JwtAuthGuard } from 'src/auth/jwt/jwt.guard';
+import { AuthService } from 'src/auth/auth.service';
 
 @Controller('cats')
 @UseInterceptors(SuccessInterceptor)
@@ -83,5 +83,11 @@ export class CatsController {
     // DB엔 폴더의 경로를 저장
     //return { image: `http://localhost:8000/media/cats/${files[0].filename}` };
     return this.catsService.uploadImg(cat, files);
+  }
+
+  @ApiOperation({ summary: '모든 고양이 가져오기' })
+  @Get('all')
+  getAllCat() {
+    return this.catsService.getAllCat();
   }
 }
