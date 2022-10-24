@@ -261,3 +261,12 @@ Q. 요청 -> 필터 -> 파이프 -> 라우트 핸들러 이런 식으로 흐름�
 
 - file upload
   `$ npm i -D @types/multer`
+
+## 프로젝트 배포와 서버 운영
+
+- AWS 클라우드 컴퓨팅 & S3 구축
+- https://aws.amazon.com/ko/free/
+- https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/Welcome.html
+- 권한 코드
+- https://aws.amazon.com/ko/premiumsupport/knowledge-center/read-access-objects-s3-bucket/
+  `{ "Version": "2012-10-17", "Statement": [ { "Sid": "AddPerm", "Effect": "Allow", "Principal": "*", "Action": [ "s3:GetObject", "s3:PutObject" ], "Resource": "arn:aws:s3:::여러분의버킷이름/*" } ] }`
