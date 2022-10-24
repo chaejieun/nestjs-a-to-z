@@ -255,8 +255,9 @@ Q. 요청 -> 필터 -> 파이프 -> 라우트 핸들러 이런 식으로 흐름�
 - JWT 기능
   `$ npm install --save @nestjs/jwt passport-jwt`
   `$ npm install --save-dev @types/passport-jwt`
-  
-  
-### Populate 
-- mongoose로 relation 설정 가능. ref로 참조하고, populate로 불러오기
-https://mongoosejs.com/docs/populate.html 
+
+- express-basic-auth
+  `$ npm install express-basic-auth`
+
+- file upload
+  `$ npm i -D @types/multer`
