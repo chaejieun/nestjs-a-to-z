@@ -71,3 +71,12 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## ETC
+
+- AWS : https://aws.amazon.com/ko/free/
+- AWS S3 공식 문서 : https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/Welcome.html
+- 권한 코드 : https://aws.amazon.com/ko/premiumsupport/knowledge-center/read-access-objects-s3-bucket/
+
+- S3 버킷 생성 후 -> IAM 설정 및 권한 설정 필요 (AccessS3FullAccess)
+- 추가로 ACL 관련 오류 사항 발견으로, ACL 객체 소유권 설정을 변경하였음
