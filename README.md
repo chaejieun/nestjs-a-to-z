@@ -373,3 +373,5 @@ Q. 요청 -> 필터 -> 파이프 -> 라우트 핸들러 이런 식으로 흐름�
 - `$ npm install --save hbs`
 - 환경 변수 설치 `$ npm i --save @nestjs/config`
 - `$ npm install --save @nestjs/mongoose mongoose`
+
+- Socket 설치 `$ npm i --save @nestjs/websockets @nestjs/platform-socket.io`
