@@ -355,3 +355,21 @@ Q. 요청 -> 필터 -> 파이프 -> 라우트 핸들러 이런 식으로 흐름�
 4. 고정 퍼블릭 주소 할당받기
 
 5. 배포 성공!!!
+
+## MVC 패턴
+
+- https://developer.mozilla.org/en-US/docs/Glossary/MVC
+- 소프트웨어 디자인 패턴
+  ![image](https://developer.mozilla.org/en-US/docs/Glossary/MVC/model-view-controller-light-blue.png)
+- Model, View, Controller 각각의 관심사로 '분리' 시켜놓은 것
+
+- `$ npm i -g @nest/cli`
+- `$ nest new chatting`
+
+### template engine 설치
+
+- https://docs.nestjs.com/techniques/mvc
+- HTML을 렌더링 해줄 수 있는 엔진 역할
+- `$ npm install --save hbs`
+- 환경 변수 설치 `$ npm i --save @nestjs/config`
+- `$ npm install --save @nestjs/mongoose mongoose`
